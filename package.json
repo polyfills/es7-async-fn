@@ -19,7 +19,7 @@
     "parsing",
     "pretty-printing"
   ],
-  "version": "0.1.1",
+  "version": "1.0.0",
   "repository": "polyfills/es7-async-fn",
   "license": "MIT",
   "main": "index.js",
