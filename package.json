@@ -39,5 +39,11 @@
   },
   "engines": {
     "node": ">= 0.8"
-  }
+  },
+  "files": [
+    "bin",
+    "index.js",
+    "runtime.js",
+    "visitor.js"
+  ]
 }
