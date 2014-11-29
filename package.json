@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "esprima-fb": "~8001.1001.0-dev-harmony-fb",
-    "through": "~2.3.6",
     "recast": "~0.9.6"
   },
   "devDependencies": {
