@@ -1,4 +1,4 @@
-exports.async = function(generator) {
+if (typeof asyncFnRuntime !== 'function') asyncFnRuntime = function asyncFnRuntime(generator) {
   return new Promise(function(resolve, reject) {
     var callNext = step.bind(generator.next);
     var callThrow = step.bind(generator.throw);

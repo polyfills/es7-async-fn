@@ -1,6 +1,6 @@
 {
   "author": "Ben Newman <bn@cs.stanford.edu>",
-  "name": "es7-async-await",
+  "name": "es7-async-fn",
   "description": "Transformer that converts async functions and await expressions into ECMAScript 6 generator functions and yield expressions",
   "keywords": [
     "async",
@@ -20,16 +20,14 @@
     "pretty-printing"
   ],
   "version": "0.1.1",
-  "homepage": "http://github.com/benjamn/es7-async-await",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/benjamn/es7-async-await.git"
-  },
+  "repository": "polyfills/es7-async-fn",
   "license": "MIT",
   "main": "index.js",
   "bin": "bin/es7-async-await",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot",
+    "test-travis": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter dot"
   },
   "dependencies": {
     "esprima-fb": "~8001.1001.0-dev-harmony-fb",
@@ -37,7 +35,8 @@
     "recast": "~0.9.6"
   },
   "devDependencies": {
-    "mocha": "~2.0.1"
+    "istanbul": "^0.3.2",
+    "mocha": "^2.0.1"
   },
   "engines": {
     "node": ">= 0.8"

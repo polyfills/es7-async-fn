@@ -16,11 +16,7 @@ exports.visitFunction = function(path) {
   awaitVisitor.visit(path.get("body"));
 
   var resultExpr = b.callExpression(
-    b.memberExpression(
-      this.getRuntime(),
-      b.identifier("async"),
-      false
-    ),
+    b.identifier("asyncFnRuntime"),
     [b.callExpression(
       b.functionExpression(
         null, // Anonymous.
@@ -40,13 +36,6 @@ exports.visitFunction = function(path) {
       b.returnStatement(resultExpr)
     ]);
   }
-};
-
-exports.getRuntime = function() {
-  return b.callExpression(
-    b.identifier("require"),
-    [b.literal("es7-async-await/runtime")]
-  );
 };
 
 var awaitVisitor = types.PathVisitor.fromMethodsObject({
